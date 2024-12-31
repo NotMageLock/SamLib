@@ -54,7 +54,7 @@ namespace SamLib
             RectTransform panelRect = panel.AddComponent<RectTransform>();
             panel.AddComponent<CanvasRenderer>();
             Image panelImage = panel.AddComponent<Image>();
-            panelImage.sprite = this.
+            panelImage.color = new Color(0f, 0f, 0f, 0.5f);
 
             panelRect.sizeDelta = new Vector2(Screen.width * 0.75f, Screen.height * 0.65f);
             panelRect.anchorMin = new Vector2(0.5f, 0.5f);
