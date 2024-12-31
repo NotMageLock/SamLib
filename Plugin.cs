@@ -35,18 +35,9 @@ namespace SamLib
 
         void CreateModButton()
         {
-            Debug.Log("Creating Mod Button");
             GameObject qb = GameObject.Find("Canvas (1)/Quit Button");
             if (qb != null)
             {
-                // Check if an EventSystem already exists
-                if (FindObjectOfType<EventSystem>() == null)
-                {
-                    GameObject eventSystem = new GameObject("EventSystem");
-                    eventSystem.AddComponent<EventSystem>();
-                    eventSystem.AddComponent<StandaloneInputModule>();
-                }
-
                 GameObject modButton = Instantiate(qb, qb.transform.parent);
                 modButton.name = "Mod Button";
                 Destroy(modButton.GetComponent<QuitButton>());
