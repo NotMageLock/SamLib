@@ -14,7 +14,7 @@ namespace SamLib
     {
         private Canvas? canvas;
         private GameObject? panel;
-        private Text? pluginListText;
+        private TextMeshProUGUI? pluginListText;
         public Button? button;
         public bool isCreated = false;
         public bool isOpen = false;
