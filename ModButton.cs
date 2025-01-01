@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace SamLib
     {
         private Canvas? canvas;
         private GameObject? panel;
-        private TextMeshProUGUI? pluginListText;
+        private Text? pluginListText;
         public Button? button;
         public bool isCreated = false;
         public bool isOpen = false;
@@ -51,11 +51,11 @@ namespace SamLib
 
             panel = new GameObject("Panel");
             panel.transform.SetParent(canvas.transform);
-            RectTransform panelRect = panel.AddComponent<RectTransform>();
             panel.AddComponent<CanvasRenderer>();
             Image panelImage = panel.AddComponent<Image>();
             panelImage.color = new Color(0f, 0f, 0f, 0.5f);
 
+            RectTransform panelRect = panel.AddComponent<RectTransform>();
             panelRect.sizeDelta = new Vector2(Screen.width * 0.75f, Screen.height * 0.65f);
             panelRect.anchorMin = new Vector2(0.5f, 0.5f);
             panelRect.anchorMax = new Vector2(0.5f, 0.5f);
@@ -80,7 +80,7 @@ namespace SamLib
         {
             panel?.SetActive(false);
             isOpen = false;
-        }
+        } 
 
         void OpenMenu()
         {
