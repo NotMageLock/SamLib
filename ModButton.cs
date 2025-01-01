@@ -14,7 +14,7 @@ namespace SamLib
     {
         private Canvas? canvas;
         private GameObject? panel;
-        private Text? pluginListText;
+        private TextMeshProUGUI? pluginListText;
         public Button? button;
         public bool isCreated = false;
         public bool isOpen = false;
@@ -32,17 +32,14 @@ namespace SamLib
                 CreateMenu();
                 isCreated = true;
             }
-            else if (isOpen)
+
+            else if (isCreated)
             {
-                CloseMenu();
-            }
-            else
-            {
-                OpenMenu();
+                DestroyMenu();
             }
         }
 
-        void CreateMenu()
+        public void CreateMenu()
         {
             canvas = new GameObject("Canvas").AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -51,11 +48,11 @@ namespace SamLib
 
             panel = new GameObject("Panel");
             panel.transform.SetParent(canvas.transform);
-            RectTransform panelRect = panel.AddComponent<RectTransform>();
             panel.AddComponent<CanvasRenderer>();
             Image panelImage = panel.AddComponent<Image>();
-            panelImage.sprite = this.
+            panelImage.color = new Color(0f, 0f, 0f, 0.5f);
 
+            RectTransform panelRect = panel.AddComponent<RectTransform>();
             panelRect.sizeDelta = new Vector2(Screen.width * 0.75f, Screen.height * 0.65f);
             panelRect.anchorMin = new Vector2(0.5f, 0.5f);
             panelRect.anchorMax = new Vector2(0.5f, 0.5f);
@@ -64,9 +61,9 @@ namespace SamLib
 
             GameObject textObject = new GameObject("PluginListText");
             textObject.transform.SetParent(panel.transform);
-            pluginListText = textObject.AddComponent<Text>();
+            pluginListText = textObject.AddComponent<TextMeshProUGUI>();
             pluginListText.color = Color.white;
-            pluginListText.alignment = TextAnchor.UpperLeft;
+            pluginListText.alignment = TextAlignmentOptions.TopLeft;
 
             RectTransform textRect = textObject.GetComponent<RectTransform>();
             textRect.sizeDelta = new Vector2(panelRect.sizeDelta.x - 20, panelRect.sizeDelta.y - 20);
@@ -76,16 +73,19 @@ namespace SamLib
             textRect.anchoredPosition = Vector2.zero;
         }
 
-        void CloseMenu()
+        void DestroyMenu()
         {
-            panel?.SetActive(false);
-            isOpen = false;
+            Destroy(canvas);
+            Destroy(panel);
+            Destroy(pluginListText);
+
+            isCreated = false;
         }
 
-        void OpenMenu()
+        public void AddPlugin(string Name, string Author, string Version, string gUID)
         {
-            panel?.SetActive(true);
-            isOpen = true;
+            if (pluginListText != null)
+            pluginListText.text += Name + $" \n By {Author}, version {Version}. gUID: {gUID}" + "\n \n";
         }
     }
 }

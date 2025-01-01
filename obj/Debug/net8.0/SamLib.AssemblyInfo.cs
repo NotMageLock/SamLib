@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SamLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0f025210b3e678210e003e9f6e07eb43fb924b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("SamLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SamLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

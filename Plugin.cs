@@ -39,7 +39,6 @@ namespace SamLib
             GameObject qb = GameObject.Find("Canvas (1)/Quit Button");
             if (qb != null)
             {
-                // Check if an EventSystem already exists
                 if (FindObjectOfType<EventSystem>() == null)
                 {
                     GameObject eventSystem = new GameObject("EventSystem");
@@ -53,13 +52,18 @@ namespace SamLib
                 modButton.transform.position = new Vector3(-0.0257f, -51.7577f, 90f);
                 GameObject text = modButton.transform.Find("Text (TMP)").gameObject;
                 text.GetComponent<TMPro.TextMeshProUGUI>().text = "Mods";
-                modButton.AddComponent<ModButton>();
+                ModButton mbcomp = modButton.AddComponent<ModButton>();
             }
         }
 
         public void OnTitleScreen(Action action)
         {
             action();
+        }
+
+        public void OnMenuCreated(object sender, EventArgs e)
+        {
+            
         }
     }
 }
