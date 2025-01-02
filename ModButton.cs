@@ -16,8 +16,6 @@ namespace SamLib
         private GameObject? panel;
         private TextMeshProUGUI? pluginListText;
         public Button? button;
-        public bool isCreated = false;
-        public bool isOpen = false;
 
         void Awake()
         {
@@ -27,16 +25,7 @@ namespace SamLib
 
         private void OnButtonClick()
         {
-            if (!isCreated)
-            {
-                CreateMenu();
-                isCreated = true;
-            }
-
-            else if (isCreated)
-            {
-                DestroyMenu();
-            }
+            CreateMenu();
         }
 
         public void CreateMenu()
@@ -71,15 +60,8 @@ namespace SamLib
             textRect.anchorMax = new Vector2(0.5f, 0.5f);
             textRect.pivot = new Vector2(0.5f, 0.5f);
             textRect.anchoredPosition = Vector2.zero;
-        }
 
-        void DestroyMenu()
-        {
-            Destroy(canvas);
-            Destroy(panel);
-            Destroy(pluginListText);
-
-            isCreated = false;
+            AddPlugin("SamLib", "MageLock", "1.0.0", "com.magelock.samlib");
         }
 
         public void AddPlugin(string Name, string Author, string Version, string gUID)

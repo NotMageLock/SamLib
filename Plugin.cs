@@ -39,13 +39,6 @@ namespace SamLib
             GameObject qb = GameObject.Find("Canvas (1)/Quit Button");
             if (qb != null)
             {
-                if (FindObjectOfType<EventSystem>() == null)
-                {
-                    GameObject eventSystem = new GameObject("EventSystem");
-                    eventSystem.AddComponent<EventSystem>();
-                    eventSystem.AddComponent<StandaloneInputModule>();
-                }
-
                 GameObject modButton = Instantiate(qb, qb.transform.parent);
                 modButton.name = "Mod Button";
                 Destroy(modButton.GetComponent<QuitButton>());
@@ -54,16 +47,14 @@ namespace SamLib
                 text.GetComponent<TMPro.TextMeshProUGUI>().text = "Mods";
                 ModButton mbcomp = modButton.AddComponent<ModButton>();
             }
+
+            else { Debug.Log("qb null, trying again"); }
+            OnTitleScreen(CreateModButton);
         }
 
         public void OnTitleScreen(Action action)
         {
             action();
-        }
-
-        public void OnMenuCreated(object sender, EventArgs e)
-        {
-            
         }
     }
 }
