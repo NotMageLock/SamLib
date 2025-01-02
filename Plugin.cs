@@ -28,11 +28,6 @@ namespace SamLib
             }
         }
 
-        private void OnDestroy()
-        {
-            SceneManager.sceneLoaded -= OnTitleScreenSL;
-        }
-
         void CreateModButton()
         {
             Debug.Log("Creating Mod Button");
@@ -48,8 +43,10 @@ namespace SamLib
                 ModButton mbcomp = modButton.AddComponent<ModButton>();
             }
 
-            else { Debug.Log("qb null, trying again"); }
-            OnTitleScreen(CreateModButton);
+            else
+            {
+                Debug.Log("qb null");
+            }
         }
 
         public void OnTitleScreen(Action action)

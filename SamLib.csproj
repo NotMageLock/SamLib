@@ -41,4 +41,8 @@
     </Reference>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(TargetDir)SamLib.dll&quot; &quot;B:\Programs\Disinherited (Demo) v1.02\BepInEx\plugins\&quot;" />
+  </Target>
+
 </Project>
