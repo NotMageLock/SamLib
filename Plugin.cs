@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 
 namespace SamLib
 {
-    [BepInPlugin("com.magelock.samlib", "SamLib", "1.0.0")]
+    [BepInPlugin("com.magelock.samlib", "SamLib", "0.0.1")]
     public class Plugin : BaseUnityPlugin
     {
         private void Awake()
@@ -34,13 +34,14 @@ namespace SamLib
             GameObject qb = GameObject.Find("Canvas (1)/Quit Button");
             if (qb != null)
             {
-                GameObject modButton = Instantiate(qb, qb.transform.parent);
-                modButton.name = "Mod Button";
-                Destroy(modButton.GetComponent<QuitButton>());
-                modButton.transform.position = new Vector3(-0.0257f, -51.7577f, 90f);
-                GameObject text = modButton.transform.Find("Text (TMP)").gameObject;
+                GameObject modButtonA = Instantiate(qb, qb.transform.parent);
+                modButtonA.name = "Mod Button";
+                Destroy(modButtonA.GetComponent<QuitButton>());
+                modButtonA.transform.position = new Vector3(-0.0257f, -51.7577f, 90f);
+                GameObject text = modButtonA.transform.Find("Text (TMP)").gameObject;
                 text.GetComponent<TMPro.TextMeshProUGUI>().text = "Mods";
-                ModButton mbcomp = modButton.AddComponent<ModButton>();
+                ModButton modButton = modButtonA.AddComponent<ModButton>();
+                modButton.plugins += "SamLib by MageLock (v0.0.1, com.magelock.samlib)";
             }
 
             else
