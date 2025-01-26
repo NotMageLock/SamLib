@@ -18,7 +18,7 @@ namespace SamLib
         private GameObject? panel;
         private TextMeshProUGUI? pluginListText;
         private Button? button;
-        public string plugins = "Plugins:\n";
+        internal string plugins = "Plugins:\n";
 
         void Awake()
         {

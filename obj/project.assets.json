@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\Lock\\GitHub\\SamLib\\SamLib.csproj",
+      "projectUniqueName": "Q:\\SamLib\\SamLib.csproj",
       "projectName": "SamLib",
-      "projectPath": "B:\\Lock\\GitHub\\SamLib\\SamLib.csproj",
+      "projectPath": "Q:\\SamLib\\SamLib.csproj",
       "packagesPath": "C:\\Users\\bumbl\\.nuget\\packages\\",
-      "outputPath": "B:\\Lock\\GitHub\\SamLib\\obj\\",
+      "outputPath": "Q:\\SamLib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bumbl\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,6 +13,7 @@ namespace SamLib
     [BepInPlugin("com.magelock.samlib", "SamLib", "0.0.1")]
     public class Plugin : BaseUnityPlugin
     {
+        internal string ModInfo = "SamLib by MageLock (v0.0.1, com.magelock.samlib)";
         private void Awake()
         {
             Debug.Log("SamLib Init");
@@ -27,6 +28,11 @@ namespace SamLib
                 OnTitleScreen(CreateModButton);
             }
         }
+        public void AddMod(string title, string author, string version, string guid)
+        {
+            string info = title + " by " + author + " (v" + version + ", " + guid + ")";
+            ModInfo += "\n" + info;
+        }
 
         void CreateModButton()
         {
@@ -37,11 +43,11 @@ namespace SamLib
                 GameObject modButtonA = Instantiate(qb, qb.transform.parent);
                 modButtonA.name = "Mod Button";
                 Destroy(modButtonA.GetComponent<QuitButton>());
-                modButtonA.transform.position = new Vector3(-0.0257f, -51.7577f, 90f);
+                modButtonA.transform.position = new Vector3(0f, -57.8576f, 90f);
                 GameObject text = modButtonA.transform.Find("Text (TMP)").gameObject;
                 text.GetComponent<TMPro.TextMeshProUGUI>().text = "Mods";
                 ModButton modButton = modButtonA.AddComponent<ModButton>();
-                modButton.plugins += "SamLib by MageLock (v0.0.1, com.magelock.samlib)";
+                modButton.plugins += ModInfo;
             }
 
             else

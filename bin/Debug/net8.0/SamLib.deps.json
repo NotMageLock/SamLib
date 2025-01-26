@@ -165,6 +165,14 @@
           }
         }
       },
+      "Sirenix.Serialization/1.0.0.0": {
+        "runtime": {
+          "Sirenix.Serialization.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Unity.2D.Tilemap.Extras/0.0.0.0": {
         "runtime": {
           "Unity.2D.Tilemap.Extras.dll": {
@@ -178,14 +186,6 @@
           "NavMeshPlus.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Sirenix.Serialization/1.0.0.0": {
-        "runtime": {
-          "Sirenix.Serialization.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -210,6 +210,14 @@
           "Unity.Splines.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Sirenix.Utilities/1.0.0.0": {
+        "runtime": {
+          "Sirenix.Utilities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -685,14 +693,6 @@
           }
         }
       },
-      "Sirenix.Utilities/1.0.0.0": {
-        "runtime": {
-          "Sirenix.Utilities.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "MonoMod.RuntimeDetour/22.1.29.1": {
         "runtime": {
           "MonoMod.RuntimeDetour.dll": {
@@ -815,17 +815,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Sirenix.Serialization/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Unity.2D.Tilemap.Extras/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "NavMeshPlus/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Sirenix.Serialization/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -841,6 +841,11 @@
       "sha512": ""
     },
     "Unity.Splines/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sirenix.Utilities/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1136,11 +1141,6 @@
       "sha512": ""
     },
     "Sirenix.Serialization.Config/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Sirenix.Utilities/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
