@@ -1,19 +1,13 @@
 using BepInEx;
-using BepInEx.Logging;
-using System;
-using System.IO;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEngine.EventSystems;
 
 namespace SamLib
 {
     [BepInPlugin("com.magelock.samlib", "SamLib", "0.0.1")]
     public class Plugin : BaseUnityPlugin
     {
-        internal string ModInfo = "SamLib by MageLock (v0.0.1, com.magelock.samlib)";
+        internal string ModInfo = "SamLib by MageLock (v0.0.1, com.magelock.samlib)\n";
         private void Awake()
         {
             Debug.Log("SamLib Init");
@@ -25,7 +19,7 @@ namespace SamLib
             Debug.Log("OnTitleScreenSL");
             if (scene.name == "TitleScreen")
             {
-                OnTitleScreen(CreateModButton);
+                OnTitleScreen();
             }
         }
         public void AddMod(string title, string author, string version, string guid)
@@ -56,9 +50,9 @@ namespace SamLib
             }
         }
 
-        public void OnTitleScreen(Action action)
+        public void OnTitleScreen()
         {
-            action();
+            CreateModButton();
         }
     }
 }
